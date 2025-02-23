@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "60ad366f-7b15-4e72-abe2-36ed5a60b124",
+		"name": "REPOSITORIES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23227161",
+		"_collection_link": "https://www.postman.com/gold-rocket-255174/workspace/prueba-lunes/collection/23227161-60ad366f-7b15-4e72-abe2-36ed5a60b124?action=share&source=collection_link&creator=23227161"
+	},
+	"item": [
+		{
+			"name": "Listar Repositorio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response status code 200\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(200);});\r",
+							"pm.test(\"response status code 301\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(301);});\r",
+							"pm.test(\"response status code 403\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(403);});\r",
+							"pm.test(\"response status code 404\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(404);});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/luisvuce/repo_uigv",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"luisvuce",
+						"repo_uigv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Repositorio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response status code 201\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(201);});\r",
+							"pm.test(\"response status code 400\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(400);});\r",
+							"pm.test(\"response status code 401\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(401);});\r",
+							"pm.test(\"response status code 404\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(404);});\r",
+							"pm.test(\"response status code 422\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(422);});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mincetur02\",\r\n    \"description\": \"Mi lugar de Trabajo!\",\r\n    \"homepage\": \"https://github.com\",\r\n    \"private\": true,\r\n    \"is_template\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/user/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Repositorio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response status code 200\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(200);});\r",
+							"pm.test(\"response status code 307\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(307);});\r",
+							"pm.test(\"response status code 403\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(403);});\r",
+							"pm.test(\"response status code 404\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(404);});\r",
+							"pm.test(\"response status code 422\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(422);});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"description\": \"Actualizacion de repositorio020!\"    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/luisvuce/proyecto-dos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"luisvuce",
+						"proyecto-dos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Repositorio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response status code 204\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(204);});\r",
+							"pm.test(\"response status code 307\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(307);});\r",
+							"pm.test(\"response status code 403\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(403);});\r",
+							"pm.test(\"response status code 404\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(404);});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/luisvuceMincetur03",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"luisvuceMincetur03"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "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",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
