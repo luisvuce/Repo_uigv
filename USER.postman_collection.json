@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "df11e51b-25d1-4191-a03a-028576d7d5fd",
+		"name": "USER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23227161",
+		"_collection_link": "https://www.postman.com/gold-rocket-255174/workspace/prueba-lunes/collection/23227161-df11e51b-25d1-4191-a03a-028576d7d5fd?action=share&source=collection_link&creator=23227161"
+	},
+	"item": [
+		{
+			"name": "Listar Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response status code 200\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(200);});\r",
+							"pm.test(\"response status code 404\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(404);});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/users/luisvuce",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"luisvuce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response status code 200\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(200);});\r",
+							"pm.test(\"response status code 304\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(304);});\r",
+							"pm.test(\"response status code 401\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(401);});\r",
+							"pm.test(\"response status code 404\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(404);});\r",
+							"pm.test(\"response status code 422\",function ()\r",
+							"{pm.expect(pm.response.code).to.equals(422);});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"kike\",\r\n\t\"location\": \"Lima-perú\",\r\n\t\"blog\": \"https://github.com/blog\",\r\n\t\"bio\": \"nuevo en dddgithub\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/user",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
